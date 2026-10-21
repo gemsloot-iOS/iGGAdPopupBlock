@@ -19,3 +19,20 @@ A lightweight, sideload-safe companion dylib for jailed and sideloaded iOS devic
 2. Inject `IGGAdPopupBlock.dylib` into your target IPA using **KSign**, **Feather**, **App+** or **ESign**.
 3. Sign, install, and open the app.
 4. Take **one screenshot** in-game to arm and complete hook activation (`INST DONE`).
+
+> ⚠️ iOSGods App+ Users ⚠️
+> >
+> I highly recommend you follow these best practices to maintain maximum compatibility.
+> 
+
+### Renaming Guidance & Filename Filtering Avoidance 
+
+iOSGods App+ may implement automated string matching or filename-based blacklisting to detect and filter out known ad-blockers, telemetry tools, or cheat engines.
+
+Keeping the default filename `IGGAdPopupBlock.` has the potential to trigger automated filters that reject or strip the dylib during the signing or installation phases. 
+
+### Best Practices for Filename Obfuscation:
+
+Avoid Keyword Matching: Strip terms like ad, block, popup, igamegod, or cheat from the filename.
+
+Generic Naming: Rename the library to innocuous utility names (e.g., GameFix.dylib or CoreSupport.dylib) prior to passing it to the injection interface.
